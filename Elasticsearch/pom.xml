@@ -5,11 +5,11 @@
 
 	<groupId>com.todcode.elasticsearch</groupId>
 	<artifactId>Elasticsearch</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<version>0.5</version>
+	<packaging>war</packaging>
 
 	<name>Elasticsearch</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Simple Elasticsearch project for Spring Boot</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
