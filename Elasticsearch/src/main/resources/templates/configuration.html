@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Elasticsearch Settings</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="/css/search_page.css" />
+</head>
+<body>
+<!-- <tr th:each="user : ${users}">  -->
+<!--                 <td th:text="${user.id}">1</td> -->
+<!--                 <td th:text="${user.username}"></td> -->
+
+	<div class="container">
+	<div><a href="/" class="tfbutton">Search Page</a></div>
+	
+	
+		<h2>ElasticSearch settings</h2>
+		<p>This is a simple settings configuration screen</p>
+		<form method="POST" action="/saveConfiguration">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>ElasticSearch Setting</th>
+						<th>Description</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>hostname</td>
+						<td>hostname</td>
+						<td><input name="hostname" type="text" class="form-control" th:value="${configuration.hostname}"></input></td>
+					</tr>
+					<tr>
+						<td>port</td>
+						<td>port</td>
+						<td><input name="port" type="text" class="form-control" th:value="${configuration.port}"></input></td>
+					</tr>
+					<tr>
+						<td>indexName</td>
+						<td>indexName</td>
+						<td><input name="indexName" type="text" class="form-control" th:value="${configuration.index}"></input></td>
+					</tr>
+<!-- 					<tr> -->
+<!-- 						<td>isCluster</td> -->
+<!-- 						<td>isCluster</td> -->
+<!-- 						<td><div class="isCluster"> -->
+<!-- 								<label><input name="isCluster" type="checkbox" th:value="${configurationisCluster}"></input></label> -->
+<!-- 							</div></td> -->
+<!-- 					</tr> -->
+					<tr>
+						<td>cluster name</td>
+						<td>cluster name</td>
+						<th><input name="clusterName" type="text" class="form-control" th:value="${configuration.clusterName}"></input></th>
+					</tr>
+<!-- 					<tr> -->
+<!-- 						<td>reindexDate</td> -->
+<!-- 						<td>reindexDate</td> -->
+<!-- 						<th>vreme</th> -->
+<!-- 					</tr> -->
+				</tbody>
+			</table>
+			<button type="submit" class="btn btn-success" value="Submit">Save</button>
+			<button type="reset" class="btn btn-danger" value="Reset">Reset</button>
+
+		</form>
+	</div>
+
+</body>
+</html>
