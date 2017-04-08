@@ -10,6 +10,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <title>Search Box Example 1</title>
 <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
 <!-- CSS styles for standard search box -->
@@ -20,13 +21,45 @@
 <div><a href="/configuration" class="tfbutton">Configuration Page</a></div>
 	<!-- HTML for SEARCH BAR -->
 	<div id="tfheader">
+	
 		<form id="tfnewsearch" method="GET" action="/search">
+		<label class="control-label">Select File</label>
+<input id="input-4" name="input4[]" type="file" class="file-loading"></input>
+<script>
+$(document).on('ready', function() {
+    $("#input-4").fileinput({showCaption: false});
+});
+</script>
 			<input type="text" class="tftextinput" name="q" size="56"
 				maxlength="120"></input><input type="submit" value="search"
 				class="tfbutton"></input>
 		</form>
 		<div class="tfclear"></div>
 	</div>
+	
+	
+
+	<div th:if="${message}">
+		<h2 th:text="${message}"/>
+	</div>
+
+	<div>
+		<form method="POST" enctype="multipart/form-data" action="/uploadFile">
+			<table>
+				<tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+			</table>
+		</form>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="file : ${files}">
+				<a th:href="${file}" th:text="${file}" />
+			</li>
+		</ul>
+	</div>
+	
 	
 </body>
 </html>

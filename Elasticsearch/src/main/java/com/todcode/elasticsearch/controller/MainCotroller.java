@@ -43,14 +43,9 @@ public class MainCotroller {
       configuration.setPort(9300);
       configuration.setClusterName("none");
       configuration.setIsCluster("false");
-      configuration.setIndex("index");//;kj
+      configuration.setIndex("index");
       configurationDAO.save(configuration);
     }
-//    model.addAttribute("port", configuration.getPort());
-//    model.addAttribute("hostname", configuration.getHostname());
-//    model.addAttribute("clusterName", configuration.getClusterName());
-//    model.addAttribute("isCluster", configuration.getIsCluster());
-//    model.addAttribute("index", configuration.getIndex());
     model.addAttribute("configuration", configuration);
     logger.info("model " + model.toString());
     return "configuration";
@@ -71,7 +66,7 @@ public class MainCotroller {
     configurationDAO.save(configuration);
     
     model.addAttribute("configuration", configuration);
-    return "configuration";
+    return "redirect:configuration";
   }
 
 
